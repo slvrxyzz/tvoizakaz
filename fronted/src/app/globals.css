@@ -1,0 +1,77 @@
+@import '../styles/reset.css';
+@import '../styles/main.css';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --primary-color: #20ee79;
+  --text-color: #000000;
+  --bg-color: #f5f5f5;
+  --card-bg: #ffffff;
+  --header-bg: #000000;
+  --footer-bg: #1a1a1a;
+  --border-color: #e0e0e0;
+  --hover-color: #1ad46b;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  --radius: 8px;
+  --header-text: #ffffff;
+  --header-hover: #20ee79;
+}
+
+
+body {
+  font-family: 'Verdana', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-placeholder {
+    width: 80px;
+    height: 40px;
+    background-color: var(--header-text);
+    border-radius: var(--radius);
+    transition: all 0.3s;
+    margin-left: 50px;
+}
+
+.guest-link {
+  padding: 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+.guest-link.login {
+  background: #1ed760;
+  color: #ffffff !important;
+  border: 2px solid #1ed760;
+}
+
+.guest-link.login:hover {
+  background: #18b853;
+  border-color: #18b853;
+  transform: translateY(-1px);
+}
+
+.guest-link.register {
+  background: transparent;
+  border: 2px solid #1ed760;
+  color: #1ed760 !important;
+}
+
+.guest-link.register:hover {
+  background: #1ed760;
+  color: #ffffff !important;
+}

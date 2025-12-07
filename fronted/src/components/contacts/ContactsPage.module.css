@@ -1,0 +1,237 @@
+.page {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.heroSection {
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+  padding: 4rem 2rem 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
+  height: 100%;
+  background: radial-gradient(ellipse at center top, rgba(30, 215, 96, 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.heroSection::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 160px;
+  background: linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.3) 40%, rgba(255, 255, 255, 0.7) 70%, #ffffff 100%);
+  pointer-events: none;
+}
+
+.section {
+  padding: 3rem 2rem 5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  margin-bottom: 1rem;
+  color: #1ed760;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 4rem;
+  align-items: flex-start;
+}
+
+.infoList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.infoCard {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 2rem;
+  border: 2px solid #f0f2f5;
+  box-shadow: 0 12px 32px rgba(15, 15, 20, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.infoCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 44px rgba(15, 15, 20, 0.12);
+  border-color: #1ed760;
+}
+
+.infoTitle {
+  font-size: 1.35rem;
+  margin-bottom: 0.75rem;
+  color: #14161a;
+  font-weight: 600;
+}
+
+.infoText {
+  color: #646871;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.formCard {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 3rem;
+  border: 2px solid #f0f2f5;
+  box-shadow: 0 18px 40px rgba(12, 15, 20, 0.08);
+}
+
+.formTitle {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  color: #14161a;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.input,
+.textarea {
+  width: 100%;
+  padding: 1.1rem 1.2rem;
+  border: 2px solid #e1e4ea;
+  border-radius: 16px;
+  font-size: 1rem;
+  font-family: inherit;
+  background: #ffffff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus,
+.textarea:focus {
+  outline: none;
+  border-color: #1ed760;
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.15);
+}
+
+.textarea {
+  min-height: 160px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.submit {
+  width: 100%;
+  background: #0f0f0f;
+  color: #1ed760;
+  padding: 1.15rem;
+  border-radius: 999px;
+  border: 2px solid #0f0f0f;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.submit:hover {
+  background: #1ed760;
+  color: #0f0f0f;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(30, 215, 96, 0.32);
+}
+
+.mapSection {
+  padding: 3rem 2rem;
+  background: #f8f9fa;
+}
+
+.mapPlaceholder {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 4rem;
+  text-align: center;
+  border: 2px solid #f0f2f5;
+  box-shadow: 0 14px 36px rgba(15, 15, 20, 0.08);
+}
+
+.mapText {
+  font-size: 1.2rem;
+  color: #646871;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .formCard {
+    padding: 2.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .formCard {
+    padding: 2rem;
+    border-radius: 20px;
+  }
+
+  .infoCard {
+    padding: 1.75rem;
+    border-radius: 16px;
+  }
+
+  .mapSection {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .mapPlaceholder {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding: 2.5rem 1rem;
+  }
+
+  .formCard {
+    padding: 1.75rem;
+  }
+
+  .mapPlaceholder {
+    padding: 2.25rem 1.5rem;
+    border-radius: 16px;
+  }
+}

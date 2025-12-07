@@ -1,0 +1,350 @@
+.page {
+  background: #ffffff;
+}
+
+.pageHero {
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 30%, #111111 60%, #1a1a1a 100%);
+  padding: 6rem 1.5rem 14rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+}
+
+.pageHero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150%;
+  height: 100%;
+  background: radial-gradient(ellipse at center top, rgba(30, 215, 96, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.pageHero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 700px;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(255, 255, 255, 0.005) 20%, 
+    rgba(255, 255, 255, 0.015) 30%, 
+    rgba(255, 255, 255, 0.03) 38%, 
+    rgba(255, 255, 255, 0.05) 45%, 
+    rgba(255, 255, 255, 0.08) 52%, 
+    rgba(255, 255, 255, 0.12) 58%, 
+    rgba(255, 255, 255, 0.18) 64%, 
+    rgba(255, 255, 255, 0.25) 70%, 
+    rgba(255, 255, 255, 0.33) 75%, 
+    rgba(255, 255, 255, 0.42) 80%, 
+    rgba(255, 255, 255, 0.52) 85%, 
+    rgba(255, 255, 255, 0.62) 89%, 
+    rgba(255, 255, 255, 0.72) 92.5%, 
+    rgba(255, 255, 255, 0.8) 95%, 
+    rgba(255, 255, 255, 0.87) 97%, 
+    rgba(255, 255, 255, 0.93) 98.5%, 
+    rgba(255, 255, 255, 0.97) 99.5%, 
+    #ffffff 100%);
+  pointer-events: none;
+}
+
+.heroSection {
+  background: transparent;
+  color: #ffffff;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  overflow: visible;
+}
+
+.heroContent {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #1ed760;
+}
+
+.heroSubtitle {
+  font-size: 1.2rem;
+  color: rgba(30, 215, 96, 0.8);
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.heroCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.1rem 2.75rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.05rem;
+  text-decoration: none;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(30, 215, 96, 0.3);
+}
+
+.heroCta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 48px rgba(30, 215, 96, 0.4);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.sectionCompact {
+  padding: 3rem 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.sectionSubtitle {
+  color: #666666;
+  max-width: 560px;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.categoryCard {
+  background: #ffffff;
+  border: 1px solid #f0f0f0;
+  border-radius: 20px;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.categoryCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 40px rgba(30, 215, 96, 0.2);
+}
+
+.categoryEmoji {
+  font-size: 2.75rem;
+}
+
+.categoryTitle {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.categoryMeta {
+  color: #666666;
+}
+
+.loadingState,
+.emptyState {
+  text-align: center;
+  padding: 2.5rem 1rem;
+  color: #555555;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.carouselViewport {
+  position: relative;
+  overflow: hidden;
+  padding: 0 3rem;
+}
+
+.carouselTrack {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  position: relative;
+  min-height: 420px;
+}
+
+.orderCard {
+  position: absolute;
+  max-width: 360px;
+  width: min(360px, 90%);
+  background: #ffffff;
+  border-radius: 24px;
+  border: 2px solid #f5f5f5;
+  padding: 2rem;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: scale(0.85);
+  transition: all 0.4s ease;
+}
+
+.orderCardActive {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 3;
+}
+
+.orderCardAdjacent {
+  opacity: 0.4;
+  transform: scale(0.9);
+  z-index: 2;
+}
+
+.orderCardHidden {
+  opacity: 0;
+  z-index: 1;
+}
+
+.orderBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #1ed760;
+  color: #000000;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.75rem;
+}
+
+.orderPrice {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1ed760;
+  margin: 1rem 0;
+}
+
+.orderMeta {
+  display: flex;
+  justify-content: space-between;
+  color: #666666;
+  margin-bottom: 1.5rem;
+}
+
+.orderAction {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.9rem 1.8rem;
+  border-radius: 999px;
+  background: #000000;
+  color: #1ed760;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #000000;
+  transition: all 0.3s ease;
+}
+
+.orderAction:hover {
+  background: #1ed760;
+  color: #000000;
+}
+
+.carouselButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.carouselButton:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carouselButtonPrev {
+  left: 1rem;
+}
+
+.carouselButtonNext {
+  right: 1rem;
+}
+
+.carouselDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.carouselDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: #d0d0d0;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.carouselDotActive {
+  transform: scale(1.2);
+  background: #1ed760;
+}
+
+.container {
+  width: min(1200px, 92vw);
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 3rem 0;
+  }
+
+  .carouselViewport {
+    padding: 0 1.5rem;
+  }
+
+  .carouselTrack {
+    min-height: 360px;
+  }
+
+  .carouselButton {
+    display: none;
+  }
+}
+

@@ -1,0 +1,234 @@
+.page {
+  min-height: 100vh;
+  background: #f7f8fa;
+  padding: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.header {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e7eaf0;
+  box-shadow: 0 20px 48px rgba(16, 24, 40, 0.08);
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.navLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #1ed760;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.navLink:hover {
+  transform: translateY(-2px);
+  background: #1ed760;
+  color: #0f172a;
+  box-shadow: 0 16px 32px rgba(30, 215, 96, 0.35);
+}
+
+.logoutButton {
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #f8fafc;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.logoutButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(239, 68, 68, 0.32);
+}
+
+.content {
+  background: #ffffff;
+  border-radius: 24px;
+  border: 1px solid #e7eaf0;
+  box-shadow: 0 22px 48px rgba(16, 24, 40, 0.08);
+  padding: 2.5rem;
+  display: grid;
+  gap: 2rem;
+}
+
+.form {
+  display: grid;
+  gap: 2rem;
+}
+
+.statusSuccess,
+.statusError {
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.statusSuccess {
+  background: rgba(30, 215, 96, 0.12);
+  color: #136f3b;
+  border: 1px solid rgba(30, 215, 96, 0.3);
+}
+
+.statusError {
+  background: rgba(217, 45, 32, 0.12);
+  color: #d92d20;
+  border: 1px solid rgba(217, 45, 32, 0.25);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.75rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.label {
+  font-weight: 600;
+  color: #343943;
+}
+
+.input {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #e2e5ec;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #1ed760;
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.15);
+}
+
+.select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #e2e5ec;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  background: #ffffff;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #1ed760;
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.15);
+}
+
+.textarea {
+  width: 100%;
+  min-height: 180px;
+  resize: vertical;
+  padding: 0.85rem 1rem;
+  border-radius: 12px;
+  border: 2px solid #e2e5ec;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.textarea:focus {
+  outline: none;
+  border-color: #1ed760;
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.15);
+}
+
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: #343943;
+}
+
+.saveButton {
+  justify-self: flex-start;
+  padding: 0.9rem 1.9rem;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #20ee79 0%, #1ad46b 100%);
+  color: #0f172a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.saveButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(32, 238, 121, 0.35);
+}
+
+.saveButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.loading {
+  display: grid;
+  gap: 0.75rem;
+  justify-items: center;
+  color: #4b5563;
+}
+
+@media (max-width: 960px) {
+  .page {
+    padding: 2rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 1.5rem;
+  }
+
+  .header,
+  .content {
+    padding: 2rem 1.5rem;
+  }
+}

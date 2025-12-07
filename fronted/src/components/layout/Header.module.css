@@ -1,0 +1,989 @@
+/* ============================================
+   HEADER - Main Navigation
+   ============================================ */
+
+.header {
+  background: linear-gradient(180deg, #000000 0%, #0a0a0a 100%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  backdrop-filter: blur(20px);
+}
+
+.navbar {
+  width: min(1400px, 94vw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+  gap: 2.5rem;
+  position: relative;
+}
+
+/* ============================================
+   LOGO
+   ============================================ */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  flex-shrink: 0;
+  position: absolute;
+  left: 0;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: -0.5px;
+}
+
+.logoText {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.devBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 0.5rem;
+  border-radius: 4px;
+  background: #ff4444;
+  color: #ffffff;
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ============================================
+   NAVIGATION CENTER
+   ============================================ */
+
+.navCenter {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  color: #1ed760;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.navLinks li a:hover {
+  color: #0fb34f;
+  background: rgba(30, 215, 96, 0.1);
+}
+
+/* ============================================
+   NAVIGATION RIGHT
+   ============================================ */
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: absolute;
+  right: 0;
+}
+
+/* ============================================
+   SEARCH
+   ============================================ */
+
+.searchContainer {
+  position: relative;
+}
+
+.searchInputWrapper {
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 0 0.75rem;
+  transition: all 0.2s ease;
+}
+
+.searchInputWrapper:focus-within {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(30, 215, 96, 0.4);
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.1);
+}
+
+.searchIcon {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.searchInput {
+  width: 200px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 0.9rem;
+  padding: 0.65rem 0.5rem;
+}
+
+.searchInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.searchResults {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  left: 0;
+  right: 0;
+  min-width: 280px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 10;
+}
+
+.searchResultItem {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: transparent;
+  border: none;
+  color: #f3f3f3;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease;
+}
+
+.searchResultItem:hover {
+  background: rgba(30, 215, 96, 0.1);
+}
+
+.searchResultType {
+  font-size: 1.1rem;
+}
+
+.searchResultName {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+/* Mobile search button */
+.mobileSearchButton {
+  display: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mobileSearchButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Mobile search bar */
+.mobileSearchBar {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #0a0a0a;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 0.75rem 1rem;
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.mobileSearchBarOpen {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobileSearchWrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  padding: 0 1rem;
+}
+
+.mobileSearchIcon {
+  color: rgba(255, 255, 255, 0.4);
+  flex-shrink: 0;
+}
+
+.mobileSearchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 0.85rem 0;
+}
+
+.mobileSearchInput::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.mobileSearchInput:focus {
+  outline: none;
+}
+
+.mobileSearchClose {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.mobileSearchClose:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.mobileSearchResults {
+  margin-top: 0.5rem;
+  background: #141414;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ============================================
+   BALANCE BADGES
+   ============================================ */
+
+.balanceGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.balanceBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  padding: 0.4rem 0.65rem;
+  color: #ffffff;
+  font-size: 0.8rem;
+}
+
+.balanceValue {
+  font-weight: 600;
+}
+
+.balanceCurrency {
+  color: #1ed760;
+  font-weight: 700;
+}
+
+/* ============================================
+   ACCOUNT BUTTON
+   ============================================ */
+
+.account {
+  position: relative;
+}
+
+.accountButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.accountButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+.accountButtonAuth {
+  border-color: #1ed760;
+  background: linear-gradient(135deg, rgba(30, 215, 96, 0.2) 0%, rgba(30, 215, 96, 0.1) 100%);
+}
+
+.accountButtonAuth:hover {
+  border-color: #1ed760;
+  background: linear-gradient(135deg, rgba(30, 215, 96, 0.3) 0%, rgba(30, 215, 96, 0.15) 100%);
+  box-shadow: 0 0 20px rgba(30, 215, 96, 0.2);
+}
+
+.accountAvatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accountIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ============================================
+   DROPDOWN MENU
+   ============================================ */
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  width: 300px;
+  background: #141414;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  z-index: 20;
+}
+
+.accountDetails {
+  padding: 1.25rem;
+  color: #f5f5f5;
+}
+
+.accountHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.accountAvatarLarge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.accountInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.accountName {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.verifiedBadge {
+  color: #1ed760;
+  font-size: 0.9rem;
+}
+
+.accountNickname {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.15rem;
+}
+
+.accountEmail {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 1rem;
+}
+
+.accountRatings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 0.85rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+.ratingItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.ratingLabel {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.ratingValue {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.dropdownActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dropdownAction {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  border: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdownAction:hover {
+  background: rgba(30, 215, 96, 0.15);
+  color: #1ed760;
+}
+
+.dropdownActionLogout {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 10px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.dropdownActionLogout:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.accountGuestActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+}
+
+.guestLogin,
+.guestRegister {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0.85rem;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.guestLogin {
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+}
+
+.guestLogin:hover {
+  box-shadow: 0 8px 24px rgba(30, 215, 96, 0.3);
+  transform: translateY(-1px);
+}
+
+.guestRegister {
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.guestRegister:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   BURGER BUTTON
+   ============================================ */
+
+.burgerButton {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1001;
+  transition: all 0.2s ease;
+}
+
+.burgerButton:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.burgerButtonOpen {
+  background: rgba(30, 215, 96, 0.1);
+  border-color: rgba(30, 215, 96, 0.3);
+}
+
+.burgerLine {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+
+.burgerButtonOpen .burgerLine:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burgerButtonOpen .burgerLine:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.burgerButtonOpen .burgerLine:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ============================================
+   MOBILE OVERLAY
+   ============================================ */
+
+.mobileOverlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobileOverlayOpen {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ============================================
+   MOBILE MENU
+   ============================================ */
+
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: min(340px, 90vw);
+  height: 100vh;
+  background: linear-gradient(180deg, #0a0a0a 0%, #111111 100%);
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 1.5rem;
+  z-index: 999;
+  transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: auto;
+}
+
+.mobileMenuOpen {
+  right: 0;
+}
+
+.mobileMenuHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 1.25rem;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.mobileMenuLogo {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 800;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobileNavLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem 0;
+}
+
+.mobileNavLinks li {
+  margin-bottom: 0.25rem;
+}
+
+.mobileNavLinks a {
+  display: flex;
+  align-items: center;
+  padding: 0.9rem 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+
+.mobileNavLinks a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobileUserSection {
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileUserCard {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.mobileUserAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 700;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mobileUserInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  color: #ffffff;
+}
+
+.mobileUserInfo strong {
+  font-size: 1rem;
+}
+
+.mobileUserInfo span {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mobileBalances {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.mobileBalanceItem {
+  display: flex;
+  align-items: baseline;
+  gap: 0.3rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+}
+
+.mobileBalanceValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.mobileBalanceLabel {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1ed760;
+}
+
+.mobileActionButton {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobileActionButton:hover {
+  box-shadow: 0 8px 24px rgba(30, 215, 96, 0.3);
+}
+
+.mobileLogoutButton {
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  font-weight: 600;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobileLogoutButton:hover {
+  background: rgba(239, 68, 68, 0.2);
+}
+
+.mobileGuestSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobileLoginButton {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  color: #000000;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.mobileLoginButton:hover {
+  box-shadow: 0 8px 24px rgba(30, 215, 96, 0.3);
+}
+
+.mobileRegisterButton {
+  display: block;
+  width: 100%;
+  padding: 0.9rem;
+  border-radius: 12px;
+  background: transparent;
+  color: #ffffff;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s ease;
+}
+
+.mobileRegisterButton:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+/* ============================================
+   RESPONSIVE - Tablet
+   ============================================ */
+
+@media (max-width: 1100px) {
+  .navLinks {
+    gap: 0.25rem;
+  }
+
+  .navLinks li a {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+  }
+
+  .searchInput {
+    width: 160px;
+  }
+
+  .balanceGroup {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar {
+    justify-content: space-between;
+  }
+
+  .logo {
+    position: static;
+  }
+
+  .navRight {
+    position: static;
+  }
+}
+
+/* ============================================
+   RESPONSIVE - Mobile
+   ============================================ */
+
+@media (max-width: 900px) {
+  .navbar {
+    height: 64px;
+  }
+
+  .navCenter {
+    display: none;
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .mobileSearchButton {
+    display: flex;
+  }
+
+  .mobileSearchBar {
+    display: block;
+  }
+
+  .burgerButton {
+    display: flex;
+  }
+
+  .mobileOverlay {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .balanceGroup {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 94vw;
+  }
+
+  .logoText {
+    display: none;
+  }
+
+  .accountButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobileSearchButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .burgerButton {
+    width: 40px;
+    height: 40px;
+  }
+}

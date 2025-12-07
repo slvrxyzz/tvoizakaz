@@ -1,0 +1,27 @@
+[
+  {
+    "slug": "creative-directions",
+    "title": "Творческая ориентация",
+    "description": "Помогает определить склонность к дизайну, слову или музыке.",
+    "questions": [
+      {
+        "id": "q1",
+        "text": "Что вам больше всего нравится?",
+        "options": [
+          {"value": "design", "label": "Создавать визуальные проекты", "score": 3, "profile": "designer", "recommendations": ["Попробуйте направления UI/UX", "Изучите Figma и Illustrator"]},
+          {"value": "writing", "label": "Писать тексты и истории", "score": 3, "profile": "copywriter", "recommendations": ["Изучите основы SMM", "Практикуйтесь в блогинге"]}
+        ]
+      },
+      {
+        "id": "q2",
+        "text": "Как вы предпочитаете работать?",
+        "options": [
+          {"value": "team", "label": "В команде", "score": 2, "profile": "producer", "recommendations": ["Рассмотрите управление проектами"]},
+          {"value": "solo", "label": "Самостоятельно", "score": 2, "profile": "artist", "recommendations": ["Попробуйте фриланс-проекты"]}
+        ]
+      }
+    ]
+  }
+]
+
+

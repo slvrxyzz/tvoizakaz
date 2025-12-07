@@ -1,0 +1,17 @@
+Functional gaps:
+- Verification badges, monthly rewards, achievement board: not implemented. Requires dedicated models, scheduled jobs, profile UI updates.
+- Portfolio gallery (attachments, achievements board) is partial: current profile lacks media uploads and showcase.
+- Ratings & leaderboards absent: need aggregation jobs, endpoints, UI widgets.
+- Content workflow moderation is basic; no editor queue or status transitions.
+- Auto-moderation for chat messages not present; only manual checks.
+
+Technical gaps:
+- No automated cache eviction tests beyond repository unit coverage.
+- Missing comprehensive CI: pytest, lint, frontend build not wired.
+- Websocket origin validation still TODO; only token checks implemented.
+
+Process / documentation:
+- Need refreshed .env guidance (cookie-based auth, NEXT_PUBLIC_ADMIN_LOGIN_DOMAIN).
+- Security response procedures for admin SQL console not documented.
+
+

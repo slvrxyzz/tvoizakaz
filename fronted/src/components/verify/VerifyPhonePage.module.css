@@ -1,0 +1,235 @@
+.page {
+  min-height: 100vh;
+  background: #f8f9fa;
+  padding: 2rem 0;
+}
+
+.container {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #1ed760;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.card {
+  background: #ffffff;
+  padding: 3rem;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(12, 15, 20, 0.1);
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0 0 1rem;
+  color: #111316;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.header p {
+  color: #646871;
+  margin: 0 0 2rem;
+  line-height: 1.5;
+}
+
+.phoneInfo {
+  background: #f3f5f7;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.phoneNumber {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #121416;
+}
+
+.changePhoneLink {
+  color: #1ed760;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.changePhoneLink:hover {
+  text-decoration: underline;
+}
+
+.codeSection {
+  margin-bottom: 2rem;
+}
+
+.codeSection label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #2b2f36;
+}
+
+.codeInputs {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.codeInput {
+  width: 60px;
+  height: 60px;
+  border: 2px solid #d8dbe0;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.codeInput:focus {
+  outline: none;
+  border-color: #1ed760;
+  box-shadow: 0 0 0 3px rgba(30, 215, 96, 0.15);
+}
+
+.codeInput:disabled {
+  background: #f5f7f9;
+  opacity: 0.7;
+}
+
+.errorMessage {
+  background: rgba(217, 45, 32, 0.08);
+  color: #d92d20;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(217, 45, 32, 0.2);
+  margin-bottom: 1rem;
+}
+
+.successMessage {
+  background: rgba(30, 215, 96, 0.12);
+  color: #128b45;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(30, 215, 96, 0.25);
+  margin-bottom: 1rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.verifyButton {
+  padding: 1rem 2rem;
+  background: #1ed760;
+  color: #0b0b0b;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.verifyButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(30, 215, 96, 0.3);
+}
+
+.verifyButton:disabled {
+  background: #c6c9cf;
+  cursor: not-allowed;
+}
+
+.resend {
+  text-align: center;
+}
+
+.resend p {
+  color: #646871;
+  margin-bottom: 0.5rem;
+}
+
+.resendButton {
+  background: none;
+  border: none;
+  color: #1ed760;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.resendButton:hover:not(:disabled) {
+  color: #159b4e;
+}
+
+.resendButton:disabled {
+  color: #c6c9cf;
+  cursor: not-allowed;
+  text-decoration: none;
+}
+
+.helpText {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e4ea;
+  color: #646871;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .card {
+    padding: 2.25rem 1.75rem;
+  }
+
+  .phoneInfo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .codeInputs {
+    gap: 0.75rem;
+  }
+
+  .codeInput {
+    width: 52px;
+    height: 52px;
+    font-size: 1.3rem;
+  }
+}
