@@ -4,7 +4,7 @@
   align-items: center;
   min-height: calc(100vh - 200px);
   padding: 4rem 2rem 8rem;
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 20%, #111111 50%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
   position: relative;
   overflow: hidden;
 }
@@ -116,7 +116,7 @@
 }
 
 .submit {
-  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  background: linear-gradient(135deg, #00E676 0%, #00C462 100%);
   color: #000000;
   border: none;
   border-radius: 16px;
@@ -125,13 +125,13 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 12px 40px rgba(30, 215, 96, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 230, 118, 0.35);
   margin-top: 0.5rem;
 }
 
 .submit:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 20px 48px rgba(30, 215, 96, 0.45);
+  box-shadow: 0 20px 48px rgba(0, 230, 118, 0.45);
 }
 
 .submit:active:not(:disabled) {
@@ -155,14 +155,14 @@
 }
 
 .links a {
-  color: #1ed760;
+  color: #00E676;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .links a:hover {
-  color: #0fb34f;
+  color: #00C462;
   text-decoration: underline;
 }
 

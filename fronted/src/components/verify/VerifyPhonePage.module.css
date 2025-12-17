@@ -142,19 +142,22 @@
 
 .verifyButton {
   padding: 1rem 2rem;
+  border: 1px solid #000000;
   background: #1ed760;
-  color: #0b0b0b;
-  border: none;
+  color: #000000;
   border-radius: 12px;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .verifyButton:hover:not(:disabled) {
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 16px 32px rgba(30, 215, 96, 0.3);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
 .verifyButton:disabled {
@@ -182,7 +185,7 @@
 }
 
 .resendButton:hover:not(:disabled) {
-  color: #159b4e;
+  color: #0fb34f;
 }
 
 .resendButton:disabled {

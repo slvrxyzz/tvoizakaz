@@ -122,9 +122,10 @@
 }
 
 .buttonPrimary {
-  background: linear-gradient(135deg, #20ee79 0%, #1ad46b 100%);
-  color: #0f0f0f;
-  box-shadow: 0 16px 34px rgba(32, 238, 121, 0.35);
+  border: 1px solid #000000;
+  background: #1ed760;
+  color: #000000;
+  box-shadow: 0 16px 34px rgba(30, 215, 96, 0.3);
 }
 
 .buttonSecondary {
@@ -132,7 +133,14 @@
   color: #434955;
 }
 
-.buttonPrimary:hover:not(:disabled),
+.buttonPrimary:hover:not(:disabled) {
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.2);
+}
+
 .buttonSecondary:hover:not(:disabled) {
   transform: translateY(-2px);
 }

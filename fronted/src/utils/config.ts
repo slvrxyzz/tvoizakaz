@@ -6,10 +6,27 @@ export const isDevMode = () => {
 }
 
 export const getApiUrl = () => {
-  return process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000'
+  if (process.env.NEXT_PUBLIC_API_URL) {
+    return process.env.NEXT_PUBLIC_API_URL
+  }
+
+  if (typeof window !== 'undefined') {
+    return window.location.origin
+  }
+
+  return 'http://localhost:8000'
 }
 
 export const getWsUrl = () => {
-  return process.env.NEXT_PUBLIC_WS_URL || 'ws://localhost:8000/ws'
+  if (process.env.NEXT_PUBLIC_WS_URL) {
+    return process.env.NEXT_PUBLIC_WS_URL
+  }
+
+  if (typeof window !== 'undefined') {
+    const proto = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
+    return `${proto}//${window.location.host}`
+  }
+
+  return 'ws://localhost:8000'
 }
 

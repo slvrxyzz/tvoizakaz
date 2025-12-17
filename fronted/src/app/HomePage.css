@@ -5,13 +5,14 @@
 .hero {
   text-align: center;
   padding: 4rem 2rem;
-  background: linear-gradient(135deg, #1ed760, #16b34a);
-  color: white;
+  background: linear-gradient(135deg, #1ed760, #ffffff);
+  color: #000000;
 }
 
 .hero h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: #000000;
 }
 
 .hero p {
@@ -137,5 +138,5 @@
 }
 
 .auth-button:hover {
-  background: #16b34a;
+  background: #0fb34f;
 }

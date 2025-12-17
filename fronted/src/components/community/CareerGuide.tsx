@@ -34,7 +34,11 @@ export function CareerGuide() {
       </div>
 
       <div className={styles.careerCTA}>
-        <button type="button" className={styles.ctaButton}>
+        <button
+          type="button"
+          className={styles.ctaButton}
+          onClick={() => alert('Эта функция ещё в процессе разработки')}
+        >
           Начать профориентацию
         </button>
         <p className={styles.ctaNote}>Бесплатно • 20–25 минут</p>

@@ -60,18 +60,20 @@
 }
 
 .newChatButton {
-  border: none;
+  border: 1px solid #000000;
   border-radius: 999px;
   background: #1ed760;
   color: #000000;
   font-weight: 600;
   padding: 0.6rem 1.25rem;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .newChatButton:hover {
-  background: #16c155;
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
 }
 
 .list {

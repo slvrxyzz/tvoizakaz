@@ -18,6 +18,8 @@ export interface OrderDTO {
   category_name: string
   customer_name: string
   customer_nickname: string
+  customer_rating?: number
+  customer_orders_count?: number
 }
 
 export interface OrderListDTO {

@@ -131,6 +131,8 @@ const AUDIENCE = [
         label: 'Скачать презентацию',
         href: '/investor-presentation.pdf',
         primary: false,
+        newTab: true,
+        download: true,
       },
       {
         label: 'Связаться с основателями',
@@ -243,6 +245,9 @@ export default function AboutPage() {
                           key={action.href}
                           href={action.href}
                           className={action.primary ? styles.buttonPrimary : styles.buttonSecondary}
+                          target={action.newTab ? '_blank' : undefined}
+                          rel={action.newTab ? 'noopener noreferrer' : undefined}
+                          download={action.download ? '' : undefined}
                         >
                           {action.label}
                         </Link>
@@ -257,11 +262,13 @@ export default function AboutPage() {
 
         <section className={`${styles.section} ${styles.finalSection}`}>
           <div className={styles.container}>
-            <h2>Вместе строим будущее, где каждый талант раскрывается</h2>
-            <p>Присоединяйтесь к сообществу и помогите следующему поколению сделать уверенный шаг в профессию.</p>
-            <div className={styles.finalLogo}>
-              <strong>Твой Фриланс</strong>
-              <span>Социальная фриланс-биржа для подростков</span>
+            <div className={styles.finalCard}>
+              <h2>Вместе строим будущее, где каждый талант раскрывается</h2>
+              <p>Присоединяйтесь к сообществу и помогите следующему поколению сделать уверенный шаг в профессию.</p>
+              <div className={styles.finalLogo}>
+                <strong>Твой Фриланс</strong>
+                <span>Социальная фриланс-биржа для подростков</span>
+              </div>
             </div>
           </div>
         </section>

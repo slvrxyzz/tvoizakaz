@@ -168,7 +168,7 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #1ed760 0%, #12b555 100%);
+  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
   color: #0f0f0f;
   display: flex;
   align-items: center;
@@ -237,7 +237,8 @@
 
 .actionPrimary {
   background: #1ed760;
-  color: #0f0f0f;
+  color: #000000;
+  border: 1px solid #000000;
 }
 
 .actionChat {
@@ -260,6 +261,14 @@
   opacity: 0.6;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+.actionPrimary:not(:disabled):hover {
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
 }
 
 .actionButton:not(:disabled):hover {

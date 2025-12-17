@@ -62,18 +62,33 @@ export function OrdersCarousel({ orders, loading }: OrdersCarouselProps) {
 
   const renderedOrders = useMemo(() => {
     return orders.map((order, index) => {
-      let stateClass = styles.orderCardHidden
+      const prev = (current - 1 + orders.length) % orders.length
+      const next = (current + 1) % orders.length
+
+      let transform = 'translateX(-50%) scale(0.85)'
+      let opacity = 0
+      let zIndex = 1
+
       if (index === current) {
-        stateClass = styles.orderCardActive
-      } else if (
-        index === (current - 1 + orders.length) % orders.length ||
-        index === (current + 1) % orders.length
-      ) {
-        stateClass = styles.orderCardAdjacent
+        transform = 'translateX(-50%) scale(1)'
+        opacity = 1
+        zIndex = 3
+      } else if (index === prev) {
+        transform = 'translateX(calc(-50% - 260px)) scale(0.9)'
+        opacity = 0.5
+        zIndex = 2
+      } else if (index === next) {
+        transform = 'translateX(calc(-50% + 260px)) scale(0.9)'
+        opacity = 0.5
+        zIndex = 2
       }
 
       return (
-        <div key={order.id} className={`${styles.orderCard} ${stateClass}`}>
+        <div
+          key={order.id}
+          className={styles.orderCard}
+          style={{ transform, opacity, zIndex }}
+        >
           <span className={styles.orderBadge}>Новый заказ</span>
           <h3>{order.title}</h3>
           <p>{order.description}</p>

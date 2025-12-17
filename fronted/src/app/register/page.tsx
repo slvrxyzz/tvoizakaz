@@ -9,6 +9,16 @@ import Header from '@/components/layout/Header'
 import styles from '@/components/auth/RegisterPage.module.css'
 import { useAuth } from '@/providers/AuthProvider'
 
+const SPECIALIZATION_OPTIONS = [
+  'Дизайн',
+  'Копирайтинг',
+  'Программирование',
+  'Соц сети и маркетинг',
+  'Аудио и видео съёмка',
+  'Фотографии',
+  'Помощь по бизнесу',
+]
+
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
     name: '',
@@ -230,18 +240,23 @@ export default function RegisterPage() {
                       <label className={styles.label} htmlFor="specification">
                         Специализация *
                       </label>
-                      <input
-                        className={styles.input}
-                        type="text"
+                      <select
+                        className={styles.select}
                         id="specification"
                         name="specification"
                         value={formData.specification}
                         onChange={handleChange}
                         required
-                        minLength={5}
-                        maxLength={100}
-                        placeholder="Веб-разработчик, Дизайнер, Маркетолог..."
-                      />
+                      >
+                        <option value="" disabled>
+                          Выберите специализацию
+                        </option>
+                        {SPECIALIZATION_OPTIONS.map((option) => (
+                          <option key={option} value={option}>
+                            {option}
+                          </option>
+                        ))}
+                      </select>
                     </div>
 
                     <div className={styles.fieldGroup}>

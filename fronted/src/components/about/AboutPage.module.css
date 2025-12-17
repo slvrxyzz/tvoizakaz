@@ -13,7 +13,7 @@
 }
 
 .pageHero {
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 40%, #111111 100%);
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
   padding: 6rem 2rem 11rem;
   text-align: center;
   position: relative;
@@ -65,7 +65,7 @@
 
 .hero {
   background: transparent;
-  color: #f7fafc;
+  color: #0a0a0a;
   padding: 0;
   text-align: center;
   position: relative;
@@ -77,7 +77,7 @@
   font-weight: 800;
   margin-bottom: 1.5rem;
   letter-spacing: -0.02em;
-  color: #1ed760;
+  color: #000000;
   position: relative;
   z-index: 1;
 }
@@ -87,7 +87,7 @@
   line-height: 1.7;
   margin: 0 auto;
   max-width: 820px;
-  color: rgba(30, 215, 96, 0.8);
+  color: #2d2d2d;
   position: relative;
   z-index: 1;
 }
@@ -332,7 +332,7 @@
 
 .audienceSubtitle {
   margin: 0.5rem 0 0;
-  color: #1ed760;
+  color: #000000;
   font-size: 1rem;
   font-weight: 600;
 }
@@ -377,7 +377,7 @@
   content: '✓';
   position: absolute;
   left: 0;
-  color: #1ed760;
+  color: #000000;
   font-weight: 700;
   font-size: 1.1rem;
 }
@@ -420,53 +420,64 @@
 }
 
 .finalSection {
-  background: #000000 !important;
-  color: #f7fafc;
+  background: #ffffff;
+  color: #101319;
   text-align: center;
-  padding: 5rem 2rem !important;
-  margin: 0 !important;
+  padding: 5rem 2rem;
+  margin: 0;
 }
 
 .finalSection .container {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+
+.finalCard {
+  background: #ffffff;
+  border: 2px solid #eef0f4;
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(16, 24, 40, 0.08);
+  padding: 3rem 3.5rem;
+  display: grid;
+  gap: 1.25rem;
 }
 
 .finalSection h2 {
   font-size: clamp(2rem, 4vw, 2.6rem);
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-  color: #1ed760 !important;
+  margin: 0;
+  font-weight: 800;
+  color: #101319;
 }
 
 .finalSection p {
-  margin: 0 auto 2rem;
-  max-width: 600px;
-  color: rgba(30, 215, 96, 0.8) !important;
-}
-
-.finalSection strong {
-  color: #1ed760 !important;
-}
-
-.finalSection span {
-  color: rgba(30, 215, 96, 0.7) !important;
+  margin: 0 auto;
+  max-width: 720px;
+  color: #424650;
+  font-size: 1.05rem;
+  line-height: 1.7;
 }
 
 .finalLogo {
   display: inline-flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1.5rem 2.5rem;
-  border-radius: 18px;
-  background: rgba(30, 215, 96, 0.1);
+  gap: 0.3rem;
+  padding: 1.25rem 2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(30, 215, 96, 0.08) 0%, rgba(15, 180, 79, 0.12) 100%);
   border: 2px solid rgba(30, 215, 96, 0.2);
   align-items: center;
+  margin: 0 auto;
+  color: #0f172a;
 }
 
 .finalLogo strong {
-  color: #1ed760 !important;
-  font-size: 1.3rem;
+  color: #0f172a;
+  font-size: 1.25rem;
+}
+
+.finalLogo span {
+  color: #3a3f48;
+  font-weight: 600;
 }
 
 @media (max-width: 1024px) {

@@ -7,10 +7,11 @@ import Header from '@/components/layout/Header'
 import styles from '@/components/contacts/ContactsPage.module.css'
 
 const CONTACT_ITEMS = [
-  { title: 'Адрес', text: 'г. Москва, ул. Примерная, д. 123' },
-  { title: 'Телефон', text: '+7 (999) 123-45-67' },
-  { title: 'Email', text: 'info@teenfreelance.ru' },
-  { title: 'Режим работы', text: 'Пн-Пт: 9:00 – 18:00' },
+  { title: 'Адрес', text: '195267, г. Санкт-Петербург, ул. Ушинского, д. 6, литера А' },
+  { title: 'Телефон 1', text: '+7 952 214-88-77' },
+  { title: 'Телефон 2', text: '+7 931 343-42-03' },
+  { title: 'Email 1', text: 'yaroslav@yanilov.ru' },
+  { title: 'Email 2', text: 'lavrinenko.roman.217@mail.ru' },
 ]
 
 export default function ContactsPage() {
@@ -98,11 +99,6 @@ export default function ContactsPage() {
           </div>
         </section>
 
-        <section className={styles.mapSection}>
-          <div className={styles.mapPlaceholder}>
-            <p className={styles.mapText}>Карта будет отображаться здесь</p>
-          </div>
-        </section>
       </main>
 
       <Footer />

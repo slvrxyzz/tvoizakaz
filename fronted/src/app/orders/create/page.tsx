@@ -105,12 +105,13 @@ export default function CreateOrderPage() {
     <>
       <Header />
       <main className={styles.page}>
-        <div className={styles.container}>
+        <div className={styles.pageHeader}>
           <header className={styles.header}>
             <h1 className={styles.title}>Создать заказ</h1>
             <p className={styles.subtitle}>Опишите проект, чтобы исполнители могли откликнуться</p>
           </header>
-
+        </div>
+        <div className={styles.container}>
           <form onSubmit={handleSubmit} className={styles.form}>
             <div className={styles.group}>
               <label className={styles.label} htmlFor="title">

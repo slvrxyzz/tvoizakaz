@@ -9,7 +9,7 @@ import Header from '@/components/layout/Header'
 import styles from '@/components/orders/OrderPage.module.css'
 import { OrderDTO, OrderPriority, OrderStatus } from '@/dto'
 import { useFavoriteStatus } from '@/hooks/useFavorites'
-import { apiClient } from '@/utils/apiClient'
+import { ApiError, apiClient } from '@/utils/apiClient'
 import { formatCurrency } from '@/utils/currency'
 
 const STATUS_STYLES: Record<OrderStatus, { text: string; className: string }> = {
@@ -44,7 +44,11 @@ export default function OrderPage() {
         setOrder(orderData)
       } catch (fetchError) {
         console.error('Error fetching order:', fetchError)
-        setError('Ошибка загрузки заказа')
+        if (fetchError instanceof ApiError && fetchError.status === 404) {
+          setError('Заказ не найден или был удалён')
+        } else {
+          setError('Ошибка загрузки заказа')
+        }
       } finally {
         setLoading(false)
       }
@@ -186,7 +190,7 @@ export default function OrderPage() {
                       <p>@{order.customer_nickname}</p>
                     </div>
                   </div>
-                  <span className={styles.authorRating}>⭐ 4.8</span>
+                  <span className={styles.authorRating}>⭐ {order.customer_rating ?? 0}</span>
                 </div>
               </footer>
             </article>
@@ -247,8 +251,8 @@ export default function OrderPage() {
                     <h4>{order.customer_name}</h4>
                     <p>@{order.customer_nickname}</p>
                     <div className={styles.customerStats}>
-                      <span>Рейтинг: 4.8</span>
-                      <span>Заказов: 15</span>
+                      <span>Рейтинг: {order.customer_rating ?? 0}</span>
+                      <span>Заказов: {order.customer_orders_count ?? 0}</span>
                     </div>
                   </div>
                 </div>

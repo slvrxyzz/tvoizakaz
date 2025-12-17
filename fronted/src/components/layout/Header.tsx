@@ -125,8 +125,8 @@ export default function Header() {
         <nav className={styles.navbar}>
           {/* Logo */}
           <Link href="/" className={styles.logo}>
-            <span className={styles.logoIcon}>TF</span>
-            <span className={styles.logoText}>TeenFreelance</span>
+            <span className={styles.logoIcon}>ТЗ</span>
+            <span className={styles.logoText}>ТвойЗаказ</span>
           </Link>
 
           {/* Desktop navigation */}
@@ -203,7 +203,7 @@ export default function Header() {
                   <span className={styles.balanceValue}>
                     {Number(user.tf_balance ?? 0).toLocaleString('ru-RU')}
                   </span>
-                  <span className={styles.balanceCurrency}>TF</span>
+                  <span className={styles.balanceCurrency}>ТЗ</span>
                 </div>
               </div>
             )}
@@ -360,7 +360,7 @@ export default function Header() {
       {/* Mobile menu */}
       <div className={`${styles.mobileMenu} ${mobileMenuOpen ? styles.mobileMenuOpen : ''}`}>
         <div className={styles.mobileMenuHeader}>
-          <span className={styles.mobileMenuLogo}>TF</span>
+          <span className={styles.mobileMenuLogo}>ТЗ</span>
           <span>Меню</span>
         </div>
         
@@ -391,7 +391,7 @@ export default function Header() {
               </div>
               <div className={styles.mobileBalanceItem}>
                 <span className={styles.mobileBalanceValue}>{Number(user.tf_balance ?? 0).toLocaleString('ru-RU')}</span>
-                <span className={styles.mobileBalanceLabel}>TF</span>
+                <span className={styles.mobileBalanceLabel}>ТЗ</span>
               </div>
             </div>
             <Link href="/profile" className={styles.mobileActionButton} onClick={closeMobileMenu}>

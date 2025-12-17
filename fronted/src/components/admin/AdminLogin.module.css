@@ -73,9 +73,9 @@
 .submit {
   width: 100%;
   border-radius: 999px;
-  border: 2px solid #0f0f0f;
-  background: #0f0f0f;
-  color: #1ed760;
+  border: 1px solid #000000;
+  background: #1ed760;
+  color: #000000;
   padding: 1.1rem;
   font-size: 1.1rem;
   font-weight: 700;
@@ -84,10 +84,11 @@
 }
 
 .submit:hover {
-  background: #1ed760;
-  color: #0f0f0f;
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 16px 36px rgba(30, 215, 96, 0.35);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 480px) {

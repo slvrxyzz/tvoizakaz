@@ -11,7 +11,7 @@
 }
 
 .pageHeader {
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
   padding: 5rem 0 11rem;
   position: relative;
   overflow: hidden;
@@ -26,7 +26,7 @@
   transform: translateX(-50%);
   width: 150%;
   height: 100%;
-  background: radial-gradient(ellipse at center top, rgba(30, 215, 96, 0.06) 0%, transparent 60%);
+  background: radial-gradient(ellipse at center top, rgba(30, 215, 96, 0.1) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -81,7 +81,7 @@
 
 .title {
   font-size: clamp(2.4rem, 5vw, 3.2rem);
-  color: #1ed760;
+  color: #000000;
   margin: 0;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -96,21 +96,24 @@
   gap: 0.6rem;
   padding: 1.2rem 2.5rem;
   border-radius: 16px;
-  border: none;
-  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  border: 1px solid #000000;
+  background: #1ed760;
   color: #000000;
   font-weight: 700;
   font-size: 1.1rem;
   cursor: pointer;
   position: relative;
   z-index: 1;
-  box-shadow: 0 12px 36px rgba(30, 215, 96, 0.35);
+  box-shadow: 0 12px 36px rgba(30, 215, 96, 0.3);
   transition: all 0.2s ease;
 }
 
 .createButton:hover {
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
   transform: translateY(-3px);
-  box-shadow: 0 16px 48px rgba(30, 215, 96, 0.45);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.2);
 }
 
 .contentLayout {
@@ -334,6 +337,7 @@
   border-radius: 4px;
   background: #e5e7eb;
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
   margin-top: 0.5rem;
 }
@@ -361,21 +365,30 @@
 
 .select {
   width: 100%;
-  padding: 0.9rem 1.2rem;
+  padding: 1rem 1.25rem;
+  padding-right: 2.8rem;
   border: 2px solid #e5e7eb;
-  border-radius: 12px;
-  font-size: 0.95rem;
+  border-radius: 14px;
+  font-size: 1rem;
   background: #ffffff;
-  color: #1a1a1a;
+  color: #0f172a;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-weight: 500;
+  font-weight: 600;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  background-image: url("data:image/svg+xml,%3csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230f172a' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 1rem) 50%;
+  background-size: 12px;
 }
 
 .select:focus {
   outline: none;
   border-color: #1ed760;
-  box-shadow: 0 0 0 4px rgba(30, 215, 96, 0.1);
+  box-shadow: 0 0 0 4px rgba(30, 215, 96, 0.14);
 }
 
 .applyButton {
@@ -543,6 +556,7 @@
   line-height: 1.7;
   margin: 0;
   display: -webkit-box;
+  line-clamp: 3;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
@@ -568,8 +582,8 @@
 .respondButton {
   padding: 0.9rem 2rem;
   border-radius: 14px;
-  border: none;
-  background: linear-gradient(135deg, #1ed760 0%, #0fb34f 100%);
+  border: 1px solid #000000;
+  background: #1ed760;
   color: #000000;
   font-weight: 700;
   font-size: 1rem;
@@ -580,8 +594,11 @@
 }
 
 .respondButton:hover {
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
   transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(30, 215, 96, 0.4);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
 }
 
 .loading {

@@ -3,7 +3,7 @@
 }
 
 .pageHero {
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 30%, #111111 60%, #1a1a1a 100%);
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
   padding: 6rem 1.5rem 14rem;
   text-align: center;
   position: relative;
@@ -19,7 +19,7 @@
   transform: translateX(-50%);
   width: 150%;
   height: 100%;
-  background: radial-gradient(ellipse at center top, rgba(30, 215, 96, 0.08) 0%, transparent 60%);
+  background: radial-gradient(ellipse at center top, rgba(30, 215, 96, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -55,7 +55,7 @@
 
 .heroSection {
   background: transparent;
-  color: #ffffff;
+  color: #0a0a0a;
   padding: 0;
   text-align: center;
   position: relative;
@@ -75,12 +75,12 @@
   margin-bottom: 1.5rem;
   line-height: 1.15;
   letter-spacing: -0.02em;
-  color: #1ed760;
+  color: #000000;
 }
 
 .heroSubtitle {
   font-size: 1.2rem;
-  color: rgba(30, 215, 96, 0.8);
+  color: #2d2d2d;
   margin-bottom: 2.5rem;
   line-height: 1.6;
 }
@@ -99,12 +99,12 @@
   text-decoration: none;
   border: none;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(30, 215, 96, 0.3);
+  box-shadow: 0 8px 32px rgba(30, 215, 96, 0.25);
 }
 
 .heroCta:hover {
   transform: translateY(-3px);
-  box-shadow: 0 16px 48px rgba(30, 215, 96, 0.4);
+  box-shadow: 0 16px 48px rgba(30, 215, 96, 0.35);
 }
 
 .section {
@@ -201,33 +201,47 @@
 
 .orderCard {
   position: absolute;
+  left: 50%;
+  top: 0;
   max-width: 360px;
   width: min(360px, 90%);
   background: #ffffff;
   border-radius: 24px;
   border: 2px solid #f5f5f5;
-  padding: 2rem;
+  padding: 1.5rem 1.5rem 1.25rem;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.1);
   opacity: 0;
-  transform: scale(0.85);
+  transform: translateX(-50%) scale(0.85);
   transition: all 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 340px;
 }
 
-.orderCardActive {
-  opacity: 1;
-  transform: scale(1);
-  z-index: 3;
+.orderCard p {
+  margin: 0;
+  color: #4b5563;
+  line-height: 1.5;
+  min-height: 4em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
 }
 
-.orderCardAdjacent {
-  opacity: 0.4;
-  transform: scale(0.9);
-  z-index: 2;
-}
-
-.orderCardHidden {
-  opacity: 0;
-  z-index: 1;
+.orderCard h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.4;
+  min-height: 2.8em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
 }
 
 .orderBadge {
@@ -253,7 +267,8 @@
   display: flex;
   justify-content: space-between;
   color: #666666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.15rem;
+  margin-top: 0.15rem;
 }
 
 .orderAction {
@@ -268,6 +283,7 @@
   font-weight: 600;
   border: 2px solid #000000;
   transition: all 0.3s ease;
+  margin-top: 0.15rem;
 }
 
 .orderAction:hover {
@@ -323,6 +339,32 @@
 .carouselDotActive {
   transform: scale(1.2);
   background: #1ed760;
+}
+
+.categoriesMore {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.categoriesMoreButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  background: #1ed760;
+  color: #000000;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid #0fb34f;
+  box-shadow: 0 8px 18px rgba(30, 215, 96, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.categoriesMoreButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(30, 215, 96, 0.28);
 }
 
 .container {

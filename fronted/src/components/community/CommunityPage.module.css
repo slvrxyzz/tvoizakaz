@@ -10,7 +10,7 @@
 }
 
 .pageHero {
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
   padding: 4rem 0 6rem;
   text-align: center;
   position: relative;
@@ -62,7 +62,7 @@
 
 .hero {
   background: transparent;
-  color: #ffffff;
+  color: #0a0a0a;
   padding: 0;
   text-align: center;
   position: relative;
@@ -73,7 +73,7 @@
   font-size: clamp(2.25rem, 5vw, 3rem);
   margin-bottom: 1rem;
   font-weight: 700;
-  color: #1ed760;
+  color: #000000;
   position: relative;
   z-index: 1;
 }
@@ -82,7 +82,7 @@
   font-size: 1.2rem;
   margin: 0 auto;
   max-width: 580px;
-  color: rgba(30, 215, 96, 0.8);
+  color: #2d2d2d;
   position: relative;
   z-index: 1;
 }
@@ -115,7 +115,7 @@
 
 .tabButton:hover {
   background: rgba(30, 215, 96, 0.1);
-  color: #1ed760;
+  color: #000000;
   transform: translateY(-1px);
 }
 

@@ -4,7 +4,7 @@
 }
 
 .heroSection {
-  background: linear-gradient(180deg, #000000 0%, #0a0a0a 50%, #111111 100%);
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
   padding: 4rem 2rem 6rem;
   text-align: center;
   position: relative;
@@ -44,7 +44,7 @@
   text-align: center;
   font-size: clamp(2rem, 4vw, 3.2rem);
   margin-bottom: 1rem;
-  color: #1ed760;
+  color: #000000;
   font-weight: 700;
   position: relative;
   z-index: 1;
@@ -164,28 +164,6 @@
   box-shadow: 0 16px 36px rgba(30, 215, 96, 0.32);
 }
 
-.mapSection {
-  padding: 3rem 2rem;
-  background: #f8f9fa;
-}
-
-.mapPlaceholder {
-  max-width: 1200px;
-  margin: 0 auto;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 4rem;
-  text-align: center;
-  border: 2px solid #f0f2f5;
-  box-shadow: 0 14px 36px rgba(15, 15, 20, 0.08);
-}
-
-.mapText {
-  font-size: 1.2rem;
-  color: #646871;
-  margin: 0;
-}
-
 @media (max-width: 900px) {
   .layout {
     grid-template-columns: 1fr;
@@ -210,14 +188,6 @@
   .infoCard {
     padding: 1.75rem;
     border-radius: 16px;
-  }
-
-  .mapSection {
-    padding: 2.5rem 1.25rem;
-  }
-
-  .mapPlaceholder {
-    padding: 3rem 2rem;
   }
 }
 

@@ -32,10 +32,10 @@
 }
 
 .headerSection {
-  background: linear-gradient(135deg, #1a1a1a 0%, #262626 100%);
-  color: #ffffff;
+  background: linear-gradient(180deg, #1ed760 0%, #ffffff 100%);
+  color: #000000;
   padding: 3rem 0;
-  border-bottom: 1px solid #333333;
+  border-bottom: none;
 }
 
 .container {
@@ -81,7 +81,7 @@
 }
 
 .headerInfo .username {
-  color: #cccccc;
+  color: #2d2d2d;
   font-size: 1rem;
   margin: 0;
 }
@@ -97,29 +97,33 @@
 
 .statsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
 }
 
 .statCard {
-  background: rgba(255, 255, 255, 0.08);
+  background: #ffffff;
   border-radius: 16px;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem;
   text-align: center;
-  backdrop-filter: blur(12px);
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+  display: grid;
+  gap: 0.35rem;
+}
+
+.statLabel {
+  color: #4b5563;
+  font-size: 0.95rem;
+  order: 1;
 }
 
 .statValue {
   font-size: 1.75rem;
   font-weight: 700;
-  color: #1ed760;
+  color: #0f172a;
+  order: 2;
 }
-
-.statLabel {
-  color: #dddddd;
-  font-size: 0.9rem;
-}
-
 .contentLayout {
   display: grid;
   grid-template-columns: 280px 1fr;
@@ -356,16 +360,18 @@
 .orderActionButton {
   padding: 0.6rem 1rem;
   border-radius: 10px;
-  border: 1px solid #1ed760;
-  background: #ffffff;
+  border: 1px solid #000000;
+  background: #1ed760;
+  color: #000000;
   font-weight: 600;
   cursor: pointer;
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
 }
 
 .orderActionButton:hover {
-  background: #1ed760;
-  color: #000000;
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
 }
 
 .emptyState {
@@ -381,10 +387,18 @@
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
   border-radius: 10px;
+  border: 1px solid #000000;
   background: #1ed760;
   color: #000000;
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.emptyState a:hover {
+  background: #000000;
+  color: #1ed760;
+  border-color: #000000;
 }
 
 .formError {

@@ -10,7 +10,11 @@ export function ProfileSettingsTab() {
       <div className={styles.settingsGroup}>
         <h3>Безопасность</h3>
         <div className={styles.settingsList}>
-          <button type="button" className={styles.settingsButton}>
+          <button
+            type="button"
+            className={styles.settingsButton}
+            onClick={() => alert('Эта функция ещё в процессе разработки')}
+          >
             <span>Сменить пароль</span>
             <span>→</span>
           </button>
@@ -44,7 +48,11 @@ export function ProfileSettingsTab() {
       <div className={styles.settingsGroup}>
         <h3>Аккаунт</h3>
         <div className={styles.settingsList}>
-          <button type="button" className={`${styles.settingsButton} ${styles.settingsButtonDanger}`}>
+          <button
+            type="button"
+            className={`${styles.settingsButton} ${styles.settingsButtonDanger}`}
+            onClick={() => alert('Эта функция ещё в процессе разработки')}
+          >
             <span>Удалить аккаунт</span>
             <span>→</span>
           </button>

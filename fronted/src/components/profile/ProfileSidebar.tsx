@@ -27,7 +27,11 @@ export function ProfileSidebar({ balance, tfBalance, activeTab, onTabChange }: P
           <span className={styles.balanceAmount}>{tfBalance.toLocaleString('ru-RU')}</span>
           <span className={styles.balanceCurrency}>TF</span>
         </div>
-        <button type="button" className={styles.balanceAction}>
+        <button
+          type="button"
+          className={styles.balanceAction}
+          onClick={() => alert('Эта функция ещё в процессе разработки')}
+        >
           Пополнить баланс
         </button>
       </div>

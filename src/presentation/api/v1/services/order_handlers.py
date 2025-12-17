@@ -87,7 +87,9 @@ class OrderHandlers:
             category_id=order_orm.category_id,
             category_name=category.name if category else "Без категории",
             customer_name=customer.name if customer else "",
-            customer_nickname=customer.nickname if customer else ""
+            customer_nickname=customer.nickname if customer else "",
+            customer_rating=float(getattr(customer, "customer_rating", 0.0) or 0.0) if customer else 0.0,
+            customer_orders_count=int(getattr(customer, "done_count", 0) or 0) if customer else 0,
         )
 
     @staticmethod

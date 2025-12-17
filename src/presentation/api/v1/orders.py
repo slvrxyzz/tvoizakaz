@@ -199,7 +199,7 @@ async def respond_to_order(
         raise HTTPException(status_code=404, detail="Order not found")
 
     if order.customer_id == current_user.id:
-        raise HTTPException(status_code=400, detail="You cannot respond to your own order")
+        raise HTTPException(status_code=400, detail="Нельзя откликаться на свой заказ")
 
     executor = await user_service.get_user_by_id(current_user.id)
     if not executor:
@@ -249,7 +249,7 @@ async def respond_to_order(
         raise HTTPException(status_code=404, detail="Customer not found")
 
     if customer.id == executor.id:
-        raise HTTPException(status_code=400, detail="You cannot create a chat with yourself")
+        raise HTTPException(status_code=400, detail="Нельзя откликаться на свой заказ")
 
     chat = await chat_service.get_or_create_chat_between_users(customer.id, executor.id)
 

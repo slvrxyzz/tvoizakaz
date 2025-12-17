@@ -1,8 +1,8 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import { useRouter, useSearchParams } from 'next/navigation'
+import dynamic from 'next/dynamic'
+import { Suspense, useEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
@@ -15,13 +15,12 @@ import { useAuth } from '@/providers/AuthProvider'
 import { useWebSocketContext } from '@/providers/WebSocketProvider'
 import { apiClient } from '@/utils/apiClient'
 
-export default function ChatsPage() {
+const ChatsContent = () => {
   const [selectedChat, setSelectedChat] = useState<ChatDTO | null>(null)
   const [orderInfo, setOrderInfo] = useState<OrderDTO | null>(null)
   const [newMessage, setNewMessage] = useState('')
 
   const { user, isAuthenticated, loading: authLoading } = useAuth()
-  const searchParams = useSearchParams()
   const router = useRouter()
 
   const {
@@ -43,23 +42,17 @@ export default function ChatsPage() {
   }, [authLoading, isAuthenticated, user, router])
 
   useEffect(() => {
-    if (isConnected) {
-      getChats()
-    }
+    if (isConnected) getChats()
   }, [isConnected, getChats])
 
   useEffect(() => {
-    const chatIdParam = searchParams.get('chat_id')
-    if (!chatIdParam || chats.length === 0) {
-      return
-    }
-
+    if (typeof window === 'undefined' || chats.length === 0) return
+    const chatIdParam = new URLSearchParams(window.location.search).get('chat_id')
+    if (!chatIdParam) return
     const chatId = Number(chatIdParam)
     const chat = chats.find((item) => item.id === chatId)
-    if (chat) {
-      setSelectedChat(chat)
-    }
-  }, [searchParams, chats])
+    if (chat) setSelectedChat(chat)
+  }, [chats])
 
   useEffect(() => {
     if (selectedChat && isConnected) {
@@ -72,14 +65,9 @@ export default function ChatsPage() {
   }, [clearNotifications])
 
   const handleSendMessage = () => {
-    if (!newMessage.trim() || !selectedChat || connectionStatus !== 'connected') {
-      return
-    }
-
+    if (!newMessage.trim() || !selectedChat || connectionStatus !== 'connected') return
     const success = sendChatMessage(selectedChat.id, newMessage)
-    if (success) {
-      setNewMessage('')
-    }
+    if (success) setNewMessage('')
   }
 
   const handleFetchOrderInfo = async (orderId: number) => {
@@ -90,7 +78,6 @@ export default function ChatsPage() {
       console.error('Error fetching order info:', error)
     }
   }
-
 
   if (authLoading) {
     return (
@@ -107,14 +94,11 @@ export default function ChatsPage() {
     )
   }
 
-  if (!isAuthenticated || !user) {
-    return null
-  }
+  if (!isAuthenticated || !user) return null
 
   return (
     <>
       <Header />
-
       <ChatsLayout
         sidebar={
           <>
@@ -159,8 +143,15 @@ export default function ChatsPage() {
           currentUserId={Number(user.id)}
         />
       </ChatsLayout>
-
       <Footer />
     </>
   )
 }
+
+const ChatsPage = () => (
+  <Suspense fallback={null}>
+    <ChatsContent />
+  </Suspense>
+)
+
+export default dynamic(() => Promise.resolve(ChatsPage), { ssr: false })

@@ -54,24 +54,26 @@ body {
 }
 
 .guest-link.login {
+  border: 1px solid #000000;
   background: #1ed760;
-  color: #ffffff !important;
-  border: 2px solid #1ed760;
+  color: #000000 !important;
 }
 
 .guest-link.login:hover {
-  background: #18b853;
-  border-color: #18b853;
+  background: #000000;
+  color: #1ed760 !important;
+  border-color: #000000;
   transform: translateY(-1px);
 }
 
 .guest-link.register {
   background: transparent;
-  border: 2px solid #1ed760;
+  border: 1px solid #000000;
   color: #1ed760 !important;
 }
 
 .guest-link.register:hover {
   background: #1ed760;
-  color: #ffffff !important;
+  color: #000000 !important;
+  border-color: #000000;
 }

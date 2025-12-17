@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 import Footer from '@/components/layout/Footer'
 import Header from '@/components/layout/Header'
@@ -19,11 +19,11 @@ export default function ResetPasswordPage() {
   const [token, setToken] = useState('')
 
   const router = useRouter()
-  const searchParams = useSearchParams()
 
   useEffect(() => {
-    const tokenParam = searchParams.get('token')
-    const emailFromUrl = searchParams.get('email')
+    if (typeof window === 'undefined') return
+    const tokenParam = new URLSearchParams(window.location.search).get('token')
+    const emailFromUrl = new URLSearchParams(window.location.search).get('email')
 
     if (!tokenParam) {
       setError('Недействительная ссылка для сброса пароля')
@@ -48,7 +48,7 @@ export default function ResetPasswordPage() {
     }
 
     validateToken()
-  }, [searchParams])
+  }, [])
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()

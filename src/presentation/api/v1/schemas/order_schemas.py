@@ -65,6 +65,8 @@ class OrderResponse(BaseModel):
     category_name: Optional[str] = None
     customer_name: str
     customer_nickname: str
+    customer_rating: float = 0.0
+    customer_orders_count: int = 0
 
 class OrderListResponse(BaseModel):
     orders: List[OrderResponse]
