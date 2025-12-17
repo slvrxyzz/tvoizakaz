@@ -44,6 +44,14 @@ class ApiClient {
       ...options.headers
     }
 
+    // Добавляем токен из localStorage в заголовок Authorization (если есть)
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('access_token')
+      if (token) {
+        headers['Authorization'] = `Bearer ${token}`
+      }
+    }
+
     try {
       return await fetch(url, {
         ...options,
@@ -82,7 +90,13 @@ class ApiClient {
       }
 
       if (response.status === 401) {
-        errorMsg = 'Неверный логин или пароль'
+        // Для эндпоинтов авторизации показываем "Неверный логин или пароль"
+        // Для остальных - "Нужно войти в аккаунт"
+        if (endpoint.includes('/auth/login') || endpoint.includes('/auth/register')) {
+          errorMsg = 'Неверный логин или пароль'
+        } else {
+          errorMsg = 'Нужно войти в аккаунт'
+        }
       } else if (response.status >= 500) {
         errorMsg = 'Сервис временно недоступен'
       }
